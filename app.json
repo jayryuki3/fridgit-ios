@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Fridgit",
+    "slug": "fridgit",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D1B0F"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.fridgit.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Fridgit needs camera access to scan barcodes on food items."
+      }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Fridgit to scan barcodes."
+        }
+      ],
+      "expo-secure-store"
+    ]
+  }
+}
