@@ -6,13 +6,11 @@ import { Home, UtensilsCrossed, Plus, ShoppingCart, Settings } from 'lucide-reac
 import { useAuth } from '../hooks/useAuth';
 import { colors } from '../constants/theme';
 
-// Auth screens
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import HouseholdScreen from '../screens/HouseholdScreen';
 import HouseholdSettingsScreen from '../screens/HouseholdSettingsScreen';
 
-// Main screens
 import HomeScreen from '../screens/HomeScreen';
 import FridgeScreen from '../screens/FridgeScreen';
 import NewItemScreen from '../screens/NewItemScreen';
@@ -121,16 +119,13 @@ export default function AppNavigator() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={screenOptions}>
         {!isAuthenticated ? (
-          // Auth flow
           <>
             <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
           </>
         ) : !hasHousehold ? (
-          // Household setup (after login, before main app)
           <Stack.Screen name="HouseholdSetup" component={HouseholdScreen} options={{ headerShown: false }} />
         ) : (
-          // Main app
           <>
             <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
             <Stack.Screen
